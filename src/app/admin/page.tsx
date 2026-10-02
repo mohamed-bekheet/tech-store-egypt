@@ -42,7 +42,7 @@ export default async function AdminDashboard() {
                 </td>
               </tr>
             ) : (
-              products.map((product) => (
+              products.map((product: any) => (
                 <tr key={product.id} className="border-b border-[var(--color-border-card)] hover:bg-white/5 transition-colors">
                   <td className="p-4">
                     {product.imageUrl ? (
