@@ -36,35 +36,35 @@ export default async function Home() {
       name: 'Bambu Lab X1-Carbon Combo',
       price: 59999,
       category: '3D Printers',
-      description: 'The industry-standard high-speed multi-color 3D printer with AI lidar.',
-      imageUrl: 'https://images.unsplash.com/photo-1615526675159-e248c3021d3f?auto=format&fit=crop&q=80&w=800',
+      description: 'Flagship High-Speed Multi-Color 3D Printer. Equipped with AI lidar, dual auto bed leveling, and the AMS for up to 16 colors.',
+      imageUrl: 'https://ardubotics.eu/14509-large/bambu-lab-x1-carbon.jpg',
       isFeatured: true,
     },
     {
       id: 'p2',
-      name: 'Bambu Lab P1S High-Speed Printer',
+      name: 'Bambu Lab P1S Combo',
       price: 34999,
       category: '3D Printers',
-      description: 'Enclosed CoreXY 3D printer with 500mm/s print speed straight out of the box.',
-      imageUrl: 'https://images.unsplash.com/photo-1631541909061-71e34df0fe54?auto=format&fit=crop&q=80&w=800',
+      description: 'Enclosed CoreXY 3D printer with 500mm/s print speed. Includes AMS for multi-color printing straight out of the box.',
+      imageUrl: 'https://store.bblcdn.eu/s8/default/1cb5fa635c4049fe8553794155377412/P1S-compressed.jpg',
       isFeatured: false,
     },
     {
       id: 'p3',
-      name: 'UGREEN Nexode 100W GaN 4-Port Charger',
+      name: 'UGREEN Nexode 100W GaN 4-Port',
       price: 2450,
       category: 'Cables & GaN',
-      description: 'Fast charge laptops, phones, and accessories simultaneously with GaN III technology.',
-      imageUrl: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&q=80&w=800',
+      description: 'Fast charge laptops, phones, and accessories simultaneously with advanced GaN III technology and thermal guard.',
+      imageUrl: 'https://eu.ugreen.com/cdn/shop/products/ugreen-nexode-100w-usb-c-gan-charger-4-port-wall-charger-662367.png',
       isFeatured: true,
     },
     {
       id: 'p4',
-      name: 'UGREEN 240W Braided USB-C Cable (2m)',
+      name: 'UGREEN 240W USB-C Digital Display Cable (2m)',
       price: 950,
       category: 'Cables & GaN',
-      description: 'Ultra-durable zinc alloy with Power Delivery 3.1 ultra-fast charging.',
-      imageUrl: 'https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=800',
+      description: 'Ultra-durable zinc alloy with Power Delivery 3.1 ultra-fast charging and real-time LED power display.',
+      imageUrl: 'https://eu.ugreen.com/cdn/shop/files/ugreen-usb-c-cable-240w-digital-display-8258007.png',
       isFeatured: false,
     },
   ];
@@ -138,7 +138,7 @@ export default async function Home() {
               <div className="store-card p-4 relative rounded-2xl overflow-hidden bg-[#121722] border-white/10 shadow-2xl">
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-black/40">
                   <img
-                    src="https://images.unsplash.com/photo-1615526675159-e248c3021d3f?auto=format&fit=crop&q=80&w=800"
+                    src="https://ardubotics.eu/14509-large/bambu-lab-x1-carbon.jpg"
                     alt="Bambu Lab 3D Printer Egypt"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />

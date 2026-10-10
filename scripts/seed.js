@@ -37,52 +37,61 @@ async function main() {
     },
   });
 
-  // 3. Sample Products
+  // Clear existing products to sync perfectly with the real data
+  await prisma.product.deleteMany({});
+
+  // 3. Real Authentic Products
   const sampleProducts = [
     {
-      name: 'Volt HyperStrike Gaming Keyboard',
-      description: 'Ultra-low latency mechanical RGB keyboard with optical switches.',
-      price: 2499,
-      category: 'Peripherals',
+      name: 'Bambu Lab X1-Carbon Combo',
+      description: 'Flagship High-Speed Multi-Color 3D Printer. Equipped with AI lidar, dual auto bed leveling, and the AMS for up to 16 colors.',
+      price: 59999,
+      category: '3D Printers',
       isFeatured: true,
-      imageUrl: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&auto=format&fit=crop&q=80',
+      imageUrl: 'https://ardubotics.eu/14509-large/bambu-lab-x1-carbon.jpg',
     },
     {
-      name: 'Volt Wireless Pro Gaming Mouse',
-      description: '26K DPI sensor, 54g lightweight design with ultra-fast wireless tech.',
-      price: 1850,
-      category: 'Peripherals',
-      isFeatured: true,
-      imageUrl: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&auto=format&fit=crop&q=80',
-    },
-    {
-      name: 'Volt Apex 27" QHD 240Hz Monitor',
-      description: 'Fast IPS panel with 1ms response time and HDR600 display.',
-      price: 11999,
-      category: 'Displays',
-      isFeatured: true,
-      imageUrl: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&auto=format&fit=crop&q=80',
-    },
-    {
-      name: 'Volt Spatial Audio Pro Headset',
-      description: '7.1 Surround sound with noise-cancelling broadcast-grade microphone.',
-      price: 3200,
-      category: 'Audio',
+      name: 'Bambu Lab P1S Combo',
+      description: 'Enclosed CoreXY 3D printer with 500mm/s print speed. Includes AMS for multi-color printing straight out of the box.',
+      price: 34999,
+      category: '3D Printers',
       isFeatured: false,
-      imageUrl: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&auto=format&fit=crop&q=80',
+      imageUrl: 'https://store.bblcdn.eu/s8/default/1cb5fa635c4049fe8553794155377412/P1S-compressed.jpg',
+    },
+    {
+      name: 'Bambu Lab A1 mini Combo',
+      description: 'Desktop multi-color 3D printer. Features full-auto calibration, active flow rate compensation, and AMS lite for multi-color.',
+      price: 14999,
+      category: '3D Printers',
+      isFeatured: true,
+      imageUrl: 'https://store.bblcdn.eu/s8/default/1604d9e9669947d2a62d1deb5eef7bef/A1_mini.jpg',
+    },
+    {
+      name: 'UGREEN Nexode 100W GaN 4-Port',
+      description: 'Fast charge laptops, phones, and accessories simultaneously with advanced GaN III technology and thermal guard.',
+      price: 2450,
+      category: 'Cables & GaN',
+      isFeatured: true,
+      imageUrl: 'https://eu.ugreen.com/cdn/shop/products/ugreen-nexode-100w-usb-c-gan-charger-4-port-wall-charger-662367.png',
+    },
+    {
+      name: 'UGREEN 240W USB-C Digital Display Cable (2m)',
+      description: 'Ultra-durable zinc alloy with Power Delivery 3.1 ultra-fast charging and real-time LED power display.',
+      price: 950,
+      category: 'Cables & GaN',
+      isFeatured: false,
+      imageUrl: 'https://eu.ugreen.com/cdn/shop/files/ugreen-usb-c-cable-240w-digital-display-8258007.png',
     }
   ];
 
   for (const item of sampleProducts) {
-    const existing = await prisma.product.findFirst({ where: { name: item.name } });
-    if (!existing) {
-      await prisma.product.create({ data: item });
-    }
+    await prisma.product.create({ data: item });
   }
 
-  console.log('✅ Accounts & Products seeded successfully:');
+  console.log('✅ Accounts & Real Products seeded successfully:');
   console.log(' - Admin:', admin.email, '(Role: ADMIN)');
   console.log(' - User:', normalUser.email, '(Role: USER)');
+  console.log(` - Inserted ${sampleProducts.length} real products.`);
 }
 
 main()
