@@ -49,6 +49,14 @@ async function main() {
       category: '3D Printers',
       isFeatured: true,
       imageUrl: 'https://ardubotics.eu/14509-large/bambu-lab-x1-carbon.jpg',
+      specs: [
+        { label: "Build Volume", value: "256 x 256 x 256 mm" },
+        { label: "Max Speed", value: "500 mm/s" },
+        { label: "Hotend", value: "All-Metal (300°C Max)" },
+        { label: "Enclosure", value: "Aluminum & Glass" },
+        { label: "AI Features", value: "Micro Lidar & Spaghetti Detection" },
+        { label: "Multi-Color", value: "Includes AMS (Up to 16 Colors)" }
+      ]
     },
     {
       name: 'Bambu Lab P1S Combo',
@@ -57,6 +65,13 @@ async function main() {
       category: '3D Printers',
       isFeatured: false,
       imageUrl: 'https://store.bblcdn.eu/s8/default/1cb5fa635c4049fe8553794155377412/P1S-compressed.jpg',
+      specs: [
+        { label: "Build Volume", value: "256 x 256 x 256 mm" },
+        { label: "Max Speed", value: "500 mm/s" },
+        { label: "Hotend", value: "All-Metal (300°C Max)" },
+        { label: "Enclosure", value: "Fully Enclosed (Plastic & Glass)" },
+        { label: "Multi-Color", value: "Includes AMS (Up to 16 Colors)" }
+      ]
     },
     {
       name: 'Bambu Lab A1 mini Combo',
@@ -65,6 +80,13 @@ async function main() {
       category: '3D Printers',
       isFeatured: true,
       imageUrl: 'https://store.bblcdn.eu/s8/default/1604d9e9669947d2a62d1deb5eef7bef/A1_mini.jpg',
+      specs: [
+        { label: "Build Volume", value: "180 x 180 x 180 mm" },
+        { label: "Max Speed", value: "500 mm/s" },
+        { label: "Hotend", value: "Quick Swap All-Metal" },
+        { label: "Calibration", value: "Full Auto (Z-offset, Bed Leveling)" },
+        { label: "Multi-Color", value: "Includes AMS lite (4 Colors)" }
+      ]
     },
     {
       name: 'UGREEN Nexode 100W GaN 4-Port',
@@ -73,6 +95,13 @@ async function main() {
       category: 'Cables & GaN',
       isFeatured: true,
       imageUrl: 'https://eu.ugreen.com/cdn/shop/products/ugreen-nexode-100w-usb-c-gan-charger-4-port-wall-charger-662367.png',
+      specs: [
+        { label: "Total Output", value: "100W Max" },
+        { label: "Ports", value: "3x USB-C, 1x USB-A" },
+        { label: "Technology", value: "GaN III Fast Charge" },
+        { label: "Protection", value: "Thermal Guard Over-temperature" },
+        { label: "Compatibility", value: "MacBook, iPhone, Galaxy, Dell" }
+      ]
     },
     {
       name: 'UGREEN 240W USB-C Digital Display Cable (2m)',
@@ -81,6 +110,13 @@ async function main() {
       category: 'Cables & GaN',
       isFeatured: false,
       imageUrl: 'https://eu.ugreen.com/cdn/shop/files/ugreen-usb-c-cable-240w-digital-display-8258007.png',
+      specs: [
+        { label: "Max Power", value: "240W (48V/5A) PD 3.1" },
+        { label: "Data Transfer", value: "480 Mbps" },
+        { label: "Material", value: "Zinc Alloy & Nylon Braided" },
+        { label: "Display", value: "Real-time LED Power Output" },
+        { label: "Length", value: "2 Meters" }
+      ]
     }
   ];
 
