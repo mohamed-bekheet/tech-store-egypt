@@ -1,52 +1,113 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-blue: #00d4ff;
-  --color-brand-purple: #9d4edd;
-  --color-bg-dark: #07090d;
-  --color-bg-card: rgba(255, 255, 255, 0.03);
-  --color-bg-card-hover: rgba(255, 255, 255, 0.08);
-  --color-border-card: rgba(255, 255, 255, 0.1);
-  --color-text-main: #f8fafc;
-  --color-text-muted: #94a3b8;
+  --color-brand-primary: #2563eb;
+  --color-brand-primary-hover: #1d4ed8;
+  --color-brand-accent: #f97316;
+  --color-brand-green: #10b981;
+  --color-bg-base: #0b0f17;
+  --color-bg-surface: #111827;
+  --color-bg-surface-elevated: #1a2333;
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-hover: rgba(255, 255, 255, 0.16);
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
 }
 
 :root {
-  --background: var(--color-bg-dark);
-  --foreground: var(--color-text-main);
+  --background: var(--color-bg-base);
+  --foreground: var(--color-text-primary);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.glass-panel {
-  background: var(--color-bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--color-border-card);
+/* Friendly, modern card surfaces */
+.store-card {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
   border-radius: 1rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glow-button {
-  background: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-purple) 100%);
-  color: white;
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
-  transition: all 0.3s ease;
-}
-
-.glow-button:hover {
-  box-shadow: 0 0 25px rgba(0, 212, 255, 0.7);
+.store-card:hover {
+  background: var(--color-bg-surface-elevated);
+  border-color: var(--color-border-hover);
   transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--color-brand-blue) 0%, var(--color-brand-purple) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Clean, friendly buttons */
+.btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-accent {
+  background: #f97316;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(249, 115, 22, 0.3);
+}
+
+.btn-accent:hover {
+  background: #ea580c;
+  transform: translateY(-1px);
+}
+
+/* WhatsApp pill */
+.btn-whatsapp {
+  background: #128c7e;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+  background: #25d366;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+}
+
+/* Clean badges */
+.badge-deal {
+  background: rgba(249, 115, 22, 0.15);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.badge-trust {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.25);
 }
