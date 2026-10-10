@@ -219,7 +219,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {displayFeatured.map((product: any) => (
               <div key={product.id} className="store-card p-5 flex flex-col justify-between group">
-                <div>
+                <Link href={`/product/${product.id}`} className="block">
                   <div className="aspect-[4/3] rounded-xl overflow-hidden mb-4 relative bg-black/40">
                     <img
                       src={product.imageUrl || 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600'}
@@ -248,7 +248,7 @@ export default async function Home() {
                       {product.description}
                     </p>
                   )}
-                </div>
+                </Link>
 
                 <div className="pt-5 mt-5 border-t border-white/[0.08] flex items-center justify-between">
                   <div>
@@ -290,7 +290,7 @@ export default async function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {displayAll.map((product: any) => (
             <div key={product.id} className="store-card p-4 flex flex-col justify-between group">
-              <div>
+              <Link href={`/product/${product.id}`} className="block">
                 <div className="aspect-square rounded-xl overflow-hidden mb-3 relative bg-black/40">
                   <img
                     src={product.imageUrl || 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600'}
@@ -308,7 +308,7 @@ export default async function Home() {
                 <h3 className="font-semibold text-sm text-white line-clamp-1 group-hover:text-blue-400 transition-colors">
                   {product.name}
                 </h3>
-              </div>
+              </Link>
 
               <div className="pt-4 mt-3 border-t border-white/[0.08] flex items-center justify-between">
                 <span className="font-bold text-base text-white">
