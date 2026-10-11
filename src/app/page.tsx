@@ -35,7 +35,7 @@ export default async function Home() {
   // Fallback defaults if database was just wiped
   const fallbackPrinters = [
     {
-      id: 'p1',
+      id: '63ea58fd-532f-4df4-bca8-bf369ca08dd8',
       name: 'Bambu Lab X1-Carbon Combo',
       price: 144999,
       category: 'X-Serie',
@@ -50,7 +50,7 @@ export default async function Home() {
       ]
     },
     {
-      id: 'p2',
+      id: 'b4f18a36-bad5-4db6-9112-460175fc3f36',
       name: 'Bambu Lab P1S Combo',
       price: 91999,
       category: 'P-Serie',
@@ -65,7 +65,7 @@ export default async function Home() {
       ]
     },
     {
-      id: 'p3',
+      id: 'f618e8e5-d79a-461a-a603-2530eae4c2eb',
       name: 'Bambu Lab A1 Combo',
       price: 48999,
       category: 'A-Serie',
@@ -80,7 +80,7 @@ export default async function Home() {
       ]
     },
     {
-      id: 'p4',
+      id: '55b728dc-434e-47f4-bec5-c87350919881',
       name: 'UGREEN Nexode 100W GaN 4-Port',
       price: 2450,
       category: 'Cables & GaN',
@@ -154,14 +154,17 @@ export default async function Home() {
               </div>
             </div>
 
-            {/* Right Hero Image Card */}
+            {/* Right Hero Image Card (Clickable to real X1-Carbon Combo product) */}
             <div className="lg:col-span-5 relative">
-              <div className="store-card p-4 relative rounded-2xl overflow-hidden bg-[#121722] border-white/10 shadow-2xl">
+              <Link 
+                href="/product/63ea58fd-532f-4df4-bca8-bf369ca08dd8" 
+                className="store-card p-4 relative rounded-2xl overflow-hidden bg-[#121722] border-white/10 shadow-2xl block hover:border-blue-500/40 transition-all group"
+              >
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden bg-black/40">
                   <img
                     src="https://ardubotics.eu/14509-large/bambu-lab-x1-carbon.jpg"
                     alt="Bambu Lab 3D Printer Egypt"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-3 left-3 bg-blue-600/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-md backdrop-blur-sm">
                     In Stock in Cairo
@@ -170,7 +173,7 @@ export default async function Home() {
 
                 <div className="pt-4 flex items-center justify-between">
                   <div>
-                    <h3 className="font-bold text-white text-base">Bambu Lab X1-Carbon Combo</h3>
+                    <h3 className="font-bold text-white text-base group-hover:text-blue-400 transition-colors">Bambu Lab X1-Carbon Combo</h3>
                     <p className="text-xs text-slate-400">Flagship High-Speed Multi-Color</p>
                   </div>
                   <div className="text-right">
@@ -178,7 +181,7 @@ export default async function Home() {
                     <span className="block text-[11px] text-emerald-400 font-medium">Free Cairo Shipping</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
           </div>
