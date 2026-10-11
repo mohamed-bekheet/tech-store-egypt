@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
+import SeriesCatalog from '@/components/SeriesCatalog';
 import { 
   ArrowRight, 
   Zap, 
@@ -36,37 +37,55 @@ export default async function Home() {
     {
       id: 'p1',
       name: 'Bambu Lab X1-Carbon Combo',
-      price: 59999,
-      category: '3D Printers',
+      price: 144999,
+      category: 'X-Serie',
       description: 'Flagship High-Speed Multi-Color 3D Printer. Equipped with AI lidar, dual auto bed leveling, and the AMS for up to 16 colors.',
       imageUrl: 'https://ardubotics.eu/14509-large/bambu-lab-x1-carbon.jpg',
       isFeatured: true,
+      specs: [
+        { label: "Series", value: "X-Serie (Flagship)" },
+        { label: "Official EU", value: "€1,349" },
+        { label: "Build Volume", value: "256 x 256 x 256 mm" },
+        { label: "Max Speed", value: "500 mm/s" }
+      ]
     },
     {
       id: 'p2',
       name: 'Bambu Lab P1S Combo',
-      price: 34999,
-      category: '3D Printers',
+      price: 91999,
+      category: 'P-Serie',
       description: 'Enclosed CoreXY 3D printer with 500mm/s print speed. Includes AMS for multi-color printing straight out of the box.',
       imageUrl: 'https://store.bblcdn.eu/s8/default/1cb5fa635c4049fe8553794155377412/P1S-compressed.jpg',
-      isFeatured: false,
+      isFeatured: true,
+      specs: [
+        { label: "Series", value: "P-Serie (Enclosed Workhorse)" },
+        { label: "Official EU", value: "€849" },
+        { label: "Build Volume", value: "256 x 256 x 256 mm" },
+        { label: "Max Speed", value: "500 mm/s" }
+      ]
     },
     {
       id: 'p3',
+      name: 'Bambu Lab A1 Combo',
+      price: 48999,
+      category: 'A-Serie',
+      description: 'Full-size 256mm bed-slinger 3D printer with full-auto calibration, active motor noise cancellation, and quick-swap nozzle.',
+      imageUrl: 'https://store.bblcdn.eu/s8/default/4820879d606b419a9e423066ec55f71c/A1-compressed.jpg',
+      isFeatured: true,
+      specs: [
+        { label: "Series", value: "A-Serie (Multi-Color)" },
+        { label: "Official EU", value: "€449" },
+        { label: "Build Volume", value: "256 x 256 x 256 mm" },
+        { label: "Noise", value: "<48 dB Quiet" }
+      ]
+    },
+    {
+      id: 'p4',
       name: 'UGREEN Nexode 100W GaN 4-Port',
       price: 2450,
       category: 'Cables & GaN',
       description: 'Fast charge laptops, phones, and accessories simultaneously with advanced GaN III technology and thermal guard.',
       imageUrl: 'https://eu.ugreen.com/cdn/shop/products/ugreen-nexode-100w-usb-c-gan-charger-4-port-wall-charger-662367.png',
-      isFeatured: true,
-    },
-    {
-      id: 'p4',
-      name: 'UGREEN 240W USB-C Digital Display Cable (2m)',
-      price: 950,
-      category: 'Cables & GaN',
-      description: 'Ultra-durable zinc alloy with Power Delivery 3.1 ultra-fast charging and real-time LED power display.',
-      imageUrl: 'https://eu.ugreen.com/cdn/shop/files/ugreen-usb-c-cable-240w-digital-display-8258007.png',
       isFeatured: false,
     },
   ];
@@ -151,11 +170,11 @@ export default async function Home() {
 
                 <div className="pt-4 flex items-center justify-between">
                   <div>
-                    <h3 className="font-bold text-white text-base">Bambu Lab X1-Carbon</h3>
+                    <h3 className="font-bold text-white text-base">Bambu Lab X1-Carbon Combo</h3>
                     <p className="text-xs text-slate-400">Flagship High-Speed Multi-Color</p>
                   </div>
                   <div className="text-right">
-                    <span className="text-blue-400 font-extrabold text-lg">59,999 EGP</span>
+                    <span className="text-blue-400 font-extrabold text-lg">144,999 EGP</span>
                     <span className="block text-[11px] text-emerald-400 font-medium">Free Cairo Shipping</span>
                   </div>
                 </div>
@@ -275,59 +294,26 @@ export default async function Home() {
         </section>
       )}
 
-      {/* Main Product Catalog (from Supabase) */}
+      {/* Main Product Catalog by Series (from Supabase) */}
       <section id="products" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">All Store Products</h2>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold mb-2">
+              <span>Bambu Lab Complete Series Lineup & Gear</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Browse by Series
+            </h2>
             <p className="text-sm text-slate-400 mt-1">
-              Browse our complete catalog with immediate fulfillment in Cairo
+              Select between X-Serie, P-Serie, and A-Serie printers with authentic specs and doubled Euro pricing in EGP.
             </p>
           </div>
-          <span className="text-xs bg-white/5 border border-white/10 px-3 py-1 rounded-full text-slate-400">
-            {displayAll.length} items available
+          <span className="text-xs bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-slate-300 self-start md:self-auto">
+            {displayAll.length} Products In Stock in Cairo
           </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {displayAll.map((product: any) => (
-            <div key={product.id} className="store-card p-4 flex flex-col justify-between group">
-              <Link href={`/product/${product.id}`} className="block">
-                <div className="aspect-square rounded-xl overflow-hidden mb-3 relative bg-black/40">
-                  <img
-                    src={product.imageUrl || 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600'}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {product.isFeatured && (
-                    <span className="absolute top-2 left-2 bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">
-                      HOT DEAL
-                    </span>
-                  )}
-                </div>
-
-                <div className="text-[11px] text-slate-400 mb-1 font-medium">{product.category}</div>
-                <h3 className="font-semibold text-sm text-white line-clamp-1 group-hover:text-blue-400 transition-colors">
-                  {product.name}
-                </h3>
-              </Link>
-
-              <div className="pt-4 mt-3 border-t border-white/[0.08] flex items-center justify-between">
-                <span className="font-bold text-base text-white">
-                  {Number(product.price).toLocaleString()} <span className="text-xs text-slate-400">EGP</span>
-                </span>
-                <a
-                  href={`https://wa.me/201021853415?text=Hello%20Volt%20Egypt,%20I'm%20interested%20in:%20${encodeURIComponent(product.name)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-blue-600 hover:text-white text-xs font-semibold text-slate-200 transition-all"
-                >
-                  Buy
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+        <SeriesCatalog products={displayAll} />
       </section>
 
       {/* Why Egyptian Customers Trust Us */}

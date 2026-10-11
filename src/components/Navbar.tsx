@@ -77,13 +77,13 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-7 text-sm font-medium">
-            <Link href="/printers" className="text-slate-300 hover:text-white transition-colors">
-              3D Printers
+            <Link href="/#products" className="text-slate-300 hover:text-white transition-colors">
+              3D Printers & Series
             </Link>
-            <Link href="/accessories" className="text-slate-300 hover:text-white transition-colors">
+            <Link href="/#products" className="text-slate-300 hover:text-white transition-colors">
               Cables & GaN
             </Link>
-            <Link href="/offers" className="flex items-center gap-1 text-orange-400 hover:text-orange-300 font-semibold transition-colors">
+            <Link href="/#offers" className="flex items-center gap-1 text-orange-400 hover:text-orange-300 font-semibold transition-colors">
               <span>Offers & Deals</span>
               <span className="text-[10px] bg-orange-500/20 text-orange-400 px-1.5 py-0.5 rounded-full border border-orange-500/30">
                 Hot

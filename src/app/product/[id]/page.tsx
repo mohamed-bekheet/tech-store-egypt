@@ -88,9 +88,9 @@ export default async function ProductPage({ params }: { params: { id: string } }
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 list-none p-0 text-sm">
               {product.specs && Array.isArray(product.specs) ? (
                 product.specs.map((spec: any, idx: number) => (
-                  <li key={idx} className="flex items-start gap-2 bg-[#121722] p-3 rounded-lg">
-                    <span className="text-blue-400 font-bold w-24 flex-shrink-0">{spec.label}:</span> 
-                    <span>{spec.value}</span>
+                  <li key={idx} className="flex items-start gap-2 bg-[#121722] p-3 rounded-lg border border-white/5">
+                    <span className="text-blue-400 font-bold min-w-[110px] flex-shrink-0">{spec.label}:</span> 
+                    <span className="text-slate-200">{spec.value}</span>
                   </li>
                 ))
               ) : (
