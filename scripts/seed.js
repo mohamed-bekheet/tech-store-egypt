@@ -283,7 +283,7 @@ async function main() {
     {
       name: 'UGREEN 240W USB-C Digital Display Cable (1m)',
       description: 'Official Amazon.de listed UGREEN 240W USB-C to USB-C cable featuring integrated real-time smart digital LED wattage display, PD 3.1 ultra-fast charging, E-Marker safety chip, and military-grade nylon braided jacket.',
-      price: 1450, // Amazon.de: €18.99 -> Doubled / Egypt landed: 1,450 EGP
+      price: 2900, // Price updated to 2,900 L.E
       category: 'Cables & GaN',
       isFeatured: true,
       imageUrl: 'https://eu.ugreen.com/cdn/shop/files/ugreen-usb-c-cable-240w-digital-display-8258007.png',

@@ -197,7 +197,7 @@ export default async function Home() {
                 <span className="text-xs font-bold uppercase tracking-wider text-orange-400 bg-orange-500/10 px-2.5 py-0.5 rounded-full border border-orange-500/20">
                   Limited Time Bundle
                 </span>
-                <span className="text-xs text-slate-400">Save 950 EGP</span>
+                <span className="text-xs text-slate-400">Save 2,900 L.E</span>
               </div>
               <h2 className="text-xl sm:text-2xl font-bold text-white">
                 Get a FREE UGREEN 240W Cable with any 3D Printer order!
