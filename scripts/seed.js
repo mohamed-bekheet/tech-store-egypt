@@ -281,18 +281,40 @@ async function main() {
       ]
     },
     {
+      name: 'UGREEN 240W USB-C Digital Display Cable (1m)',
+      description: 'Official Amazon.de listed UGREEN 240W USB-C to USB-C cable featuring integrated real-time smart digital LED wattage display, PD 3.1 ultra-fast charging, E-Marker safety chip, and military-grade nylon braided jacket.',
+      price: 1450, // Amazon.de: €18.99 -> Doubled / Egypt landed: 1,450 EGP
+      category: 'Cables & GaN',
+      isFeatured: true,
+      imageUrl: 'https://eu.ugreen.com/cdn/shop/files/ugreen-usb-c-cable-240w-digital-display-8258007.png',
+      specs: [
+        { label: "Series", value: "UGREEN Smart Charging" },
+        { label: "Amazon Ref", value: "Amazon.de ASIN: B0F62S8P1T (Model 65866)" },
+        { label: "Official EU", value: "€18.99 (Amazon.de)" },
+        { label: "Power Output", value: "240W Max (PD 3.1, 48V/5A Ultra-Fast)" },
+        { label: "Smart Display", value: "Real-time LED Screen (Wattage Output)" },
+        { label: "Safety Chip", value: "Dual E-Marker Intelligent Thermal Guard" },
+        { label: "Data Speed", value: "480 Mbps" },
+        { label: "Material", value: "Zinc Alloy + Premium Nylon Braided" },
+        { label: "Length", value: "1 Meter (3.3 ft)" },
+        { label: "Compatibility", value: "MacBook Pro/Air, iPhone 15/16, Galaxy S24, Steam Deck, Dell XPS" },
+        { label: "Warranty", value: "1 Year Volt Egypt Official Warranty" }
+      ]
+    },
+    {
       name: 'UGREEN 240W USB-C Digital Display Cable (2m)',
-      description: 'Ultra-durable zinc alloy with Power Delivery 3.1 ultra-fast charging and real-time LED power wattage display.',
-      price: 950,
+      description: 'Ultra-durable zinc alloy with Power Delivery 3.1 ultra-fast charging, real-time LED power wattage display, and extra 2-meter reach.',
+      price: 1850,
       category: 'Cables & GaN',
       isFeatured: false,
       imageUrl: 'https://eu.ugreen.com/cdn/shop/files/ugreen-usb-c-cable-240w-digital-display-8258007.png',
       specs: [
-        { label: "Max Power", value: "240W (48V/5A) PD 3.1" },
+        { label: "Power Output", value: "240W (48V/5A) PD 3.1" },
         { label: "Data Transfer", value: "480 Mbps" },
         { label: "Material", value: "Zinc Alloy & Nylon Braided" },
         { label: "Display", value: "Real-time LED Power Output (Wattage)" },
-        { label: "Length", value: "2 Meters" }
+        { label: "Length", value: "2 Meters (6.6 ft)" },
+        { label: "Warranty", value: "1 Year Volt Egypt Official Warranty" }
       ]
     }
   ];
