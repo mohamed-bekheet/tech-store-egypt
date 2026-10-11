@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { ShoppingCart, User, Search, Zap, ShieldCheck, Truck, MessageCircle } from 'lucide-react';
+import { ShoppingCart, User, Search, Zap, ShieldCheck, Truck, MessageCircle, X } from 'lucide-react';
 import { useState } from 'react';
+import SearchBar from '@/components/SearchBar';
 
 export default function Navbar() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#0b0f17]/95 backdrop-blur-md border-b border-white/[0.08]">
@@ -61,18 +62,9 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Search Bar */}
-          <div className="hidden md:flex flex-1 max-w-md relative">
-            <div className="relative w-full">
-              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search Bambu Lab, GaN chargers, cables..."
-                className="w-full bg-[#161f30] border border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-colors"
-              />
-            </div>
+          {/* Active Fuse.js Fuzzy Search Bar (Desktop) */}
+          <div className="hidden md:flex flex-1 max-w-md justify-center">
+            <SearchBar />
           </div>
 
           {/* Navigation Links */}
@@ -89,13 +81,22 @@ export default function Navbar() {
                 Hot
               </span>
             </Link>
-            <Link href="/contact" className="text-slate-300 hover:text-white transition-colors">
+            <Link href="https://wa.me/201021853415" target="_blank" className="text-slate-300 hover:text-white transition-colors">
               Contact Us
             </Link>
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Mobile Search Toggle */}
+            <button
+              onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
+              className="md:hidden p-2.5 rounded-xl bg-white/5 text-slate-300 hover:text-white transition-colors"
+              aria-label="Toggle search"
+            >
+              {mobileSearchOpen ? <X className="w-4 h-4" /> : <Search className="w-4 h-4" />}
+            </button>
+
             <Link
               href="/admin/login"
               className="flex items-center gap-2 px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-colors text-sm font-medium"
@@ -117,6 +118,13 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
+
+        {/* Mobile Search Input Drawer */}
+        {mobileSearchOpen && (
+          <div className="md:hidden pb-4 pt-1 animate-in fade-in slide-in-from-top-1">
+            <SearchBar />
+          </div>
+        )}
       </div>
     </header>
   );
